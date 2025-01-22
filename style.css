@@ -1,0 +1,8 @@
+.upgradeBoxes {
+  display: flex;
+  gap: 10px;
+}
+#bigCookie {
+  height: 100px;
+  width: 100px;
+}
