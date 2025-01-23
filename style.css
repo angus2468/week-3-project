@@ -6,3 +6,14 @@
   height: 100px;
   width: 100px;
 }
+.mainStuff {
+  display: flex;
+  width: 100vw;
+}
+.shop {
+  display: flex;
+}
+.cookieDisplays {
+  display: flex;
+  flex-direction: column;
+}

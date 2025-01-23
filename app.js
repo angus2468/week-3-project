@@ -46,6 +46,8 @@ function buyUpgrade(upgrading) {
     cookies -= upgrading.cost;
     cps += upgrading.increase;
     cpsDisplay.innerText = `Your cps is: ${cps}`;
+  } else if (cookies < upgrading.cost) {
+    alert("You can't afford that!");
   }
 }
 
@@ -56,14 +58,15 @@ setInterval(() => {
   displayedCookies = cookies;
   displayedCookies = Math.round(displayedCookies);
   cookieDisplay.innerText = `You have ${displayedCookies} cookies`;
+  localStorage.setItem("cookies", cookies);
 }, 1000);
-// setInterval(() => {
-//   cookieDisplay.innerText = `You have ${cookies} cookies`;
-//   cookies += cps / 10;
-//   Math.round(cookies);
-// }, 100);
+
 bigCookie.addEventListener("click", function () {
   cookies += clickValue;
 });
 
 fetchUpgrades();
+
+// onload = () => {
+//   cookies = localStorage.getItem("cookies") || 0;
+// };
