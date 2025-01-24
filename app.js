@@ -2,11 +2,17 @@ let cookies = 10000;
 let cps = 0;
 let clickValue = 1;
 let displayedCookies;
+cookies = localStorage.getItem("cookies") || 0;
+cookies = Number(cookies);
+cps = Number(localStorage.getItem("cps")) || 0;
 
 const cookieDisplay = document.getElementById("cookieDisplay");
 const shopContainer = document.getElementById("shopContainer");
 const cpsDisplay = document.getElementById("cpsDisplay");
 const bigCookie = document.getElementById("bigCookie");
+const resetGame = document.getElementById("resetGame");
+
+cpsDisplay.innerText = `Your cps is: ${cps}`;
 
 async function fetchUpgrades() {
   const response = await fetch(
@@ -59,6 +65,7 @@ setInterval(() => {
   displayedCookies = Math.round(displayedCookies);
   cookieDisplay.innerText = `You have ${displayedCookies} cookies`;
   localStorage.setItem("cookies", cookies);
+  localStorage.setItem("cps", cps);
 }, 1000);
 
 bigCookie.addEventListener("click", function () {
@@ -67,6 +74,13 @@ bigCookie.addEventListener("click", function () {
 
 fetchUpgrades();
 
-// onload = () => {
-//   cookies = localStorage.getItem("cookies") || 0;
-// };
+function gameReset() {
+  cookies = 0;
+  cps = 0;
+  cpsDisplay.innerText = `Your cps is: ${cps}`;
+  cookieDisplay.innerText = `You have ${cookies} cookies`;
+}
+
+resetGame.addEventListener("click", function () {
+  gameReset();
+});
