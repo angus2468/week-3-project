@@ -1,10 +1,15 @@
 .upgradeBoxes {
   display: flex;
   gap: 10px;
+  align-items: center;
+  background-color: #f4bbd3;
+  justify-content: space-between;
+  padding: 5px;
 }
 #bigCookie {
   height: 200px;
   width: 200px;
+  padding: 10px;
 }
 #bigCookie:active {
   transform: translateY(4px);
@@ -14,11 +19,35 @@
   width: 100vw;
   gap: 10px;
   justify-content: center;
+  background-color: #fe5d9f;
 }
 .shop {
   display: flex;
+  background-color: #f686bd;
+  padding: 5px;
 }
 .cookieDisplays {
   display: flex;
   flex-direction: column;
+  width: 250px;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+.buyButtons {
+  height: fit-content;
+}
+.bigCookieContainer {
+  background-color: #f686bd;
+  padding: 10px;
+  height: fit-content;
+}
+html {
+  background-color: #fe5d9f;
+}
+#resetGame {
+  position: absolute;
+  top: 90vh;
+  left: 90vw;
 }
