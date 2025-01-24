@@ -52,6 +52,8 @@ function buyUpgrade(upgrading) {
     cookies -= upgrading.cost;
     cps += upgrading.increase;
     cpsDisplay.innerText = `Your cps is: ${cps}`;
+    const clickSound = new Audio("assets/buySound.mp3");
+    clickSound.play();
   } else if (cookies < upgrading.cost) {
     alert("You can't afford that!");
   }
@@ -70,6 +72,8 @@ setInterval(() => {
 
 bigCookie.addEventListener("click", function () {
   cookies += clickValue;
+  const clickSound = new Audio("assets/clickSound.mp3");
+  clickSound.play();
 });
 
 fetchUpgrades();

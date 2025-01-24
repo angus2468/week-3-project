@@ -51,3 +51,14 @@ html {
   top: 90vh;
   left: 90vw;
 }
+#shopContainer {
+  text-align: center;
+}
+* {
+  font-family: monospace;
+}
+.bigText {
+  font-weight: bold;
+  font-size: 64px;
+  margin: 0px;
+}
